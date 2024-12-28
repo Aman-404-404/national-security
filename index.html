@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Security Threat Assessment Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>National Security Threat Assessment Tool</h1>
+    </header>
+
+    <section class="input-section">
+        <h2>Evaluate a Threat</h2>
+        <form id="threat-form">
+            <label for="threat-description">Threat Description:</label>
+            <textarea id="threat-description" placeholder="Describe the threat..." required></textarea>
+
+            <label for="threat-level">Risk Level:</label>
+            <select id="threat-level" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <label for="threat-category">Category:</label>
+            <select id="threat-category" required>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Terrorism">Terrorism</option>
+                <option value="Biological">Biological</option>
+                <option value="Natural Disaster">Natural Disaster</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button type="submit">Assess Threat</button>
+        </form>
+    </section>
+
+    <section class="result-section">
+        <h2>Threat Assessment Results</h2>
+        <ul id="threat-results"></ul>
+    </section>
+    
+    <script src="app.js"></script>
+</body>
+</html>
