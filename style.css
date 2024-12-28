@@ -1,69 +1,169 @@
+/* General Styling for Dark Theme */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #121212;
+    color: #E0E0E0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    background-color: #1E1E1E;
+    color: #ffffff;
+    padding: 40px 20px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.input-section, .result-section {
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Form and Results Section */
+.login-container,.input-section, .result-section {
+    margin: 30px auto;
+    max-width: 900px;
+    background-color: #2A2A2A;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.8s ease-out;
 }
 
 h2 {
-    margin-top: 0;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #E0E0E0;
+    text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 label {
-    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    color: #ccc;
 }
 
-textarea, select {
-    padding: 10px;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+textarea, select, input[type="text"], input[type="password"] {
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid #444;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #333;
+    color: #E0E0E0;
+}
+
+textarea:focus, select:focus, input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #E0E0E0;
+    outline: none;
+    box-shadow: 0 0 5px rgba(224, 224, 224, 0.3);
 }
 
 button {
-    padding: 10px;
-    background-color: #333;
+    padding: 15px;
+    background-color: #FF5722;
     color: white;
+    font-size: 1.2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #E64A19;
+    transform: translateY(-3px);
 }
 
+button:active {
+    transform: translateY(0);
+}
+
+/* Result Section */
 .result-section ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .result-section li {
-    background-color: #e2e2e2;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.result-section li:hover {
+    background-color: #444;
+}
+
+/* Notification Styling */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .input-section, .result-section {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        gap: 15px;
+    }
 }
